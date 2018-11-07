@@ -5,26 +5,21 @@ namespace Server
 {
     public class Program
     {
-        //private static Server _server { get; set; }
+        private static Server _server { get; set; }
 
         public static void Main(string[] args)
         {
-            //_server = new Server();
-
             Console.Title = "(Server) UDP Sample";
 
-            //_server.Start();
-            //_server.Listen();
-
-            Console.WriteLine($"Server is listening on port 7171...");
+            _server = new Server();
+            _server.Start();
 
             while (Console.ReadKey(true).Key != ConsoleKey.Escape)
                 ;
 
             Console.WriteLine("Closing server...");
 
-            //_server.Disconnect();
-            //_server.Stop();
+            _server.Stop();
 
             Thread.Sleep(1000);
 
